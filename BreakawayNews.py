@@ -2,8 +2,10 @@ import pandas as pd
 from pygooglenews import GoogleNews
 import datetime
 
+#initiate the GoogleNews client
 gn = GoogleNews()
 
+#dates are changed daily here in actual use
 def get_news(search):
     stories = []
     start_date = datetime.date(2022,1,13)
@@ -25,13 +27,13 @@ def get_news(search):
 
     return stories
 
-
-search_terms = ["Ricoh USA", "Ricoh Americas", "Ricoh North America", "bta + Ricoh", "Ricoh + patent infringement", "Ricoh David Levine", "Ricoh Donna Venable", "Ricoh Carsten Bruhn", "Ricoh Jim Coriddi", "Ricoh layoff", "Ricoh fired", "Kayesa Ransomware Attack Ricoh", "Ricoh print nightmare", "Mark Rowe arrested", "Jose Torres Boston area Ricoh", "alberta hip and knee clinic ransomware attack", "jesus antonio gonzalez georgia bureau of investigation", "Log4J Ricoh", "gurvinder singh arrested", "Ricoh raising prices", "Canon Solutions America", "HP Inc", "Xerox", "Koncia Minolta"]
+#define a list of search terms (left blank here)
+search_terms = []
 
 for term in search_terms:
 	results_list = get_news(term)
 	
-
+#write results to 'results.txt'
 	with open('results.txt', 'a') as f:
 		f.write(term)
 		f.write("\n")
@@ -46,4 +48,5 @@ for term in search_terms:
 			f.write(article['published'])
 			f.write("\n \n")
 
-print('Dataframe is written to text file successfully.')
+#success message			
+print('Data is written to text file successfully.')
