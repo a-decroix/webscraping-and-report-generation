@@ -1,0 +1,2 @@
+# webscraping-and-report-generation
+I wrote this program and shell script to comb Google News for particular search terms (over a defined date range) and return results in a particular format. The motivation for this program was a task for my work - I am in charge of compiling daily news reports for particular industries and accounts, and I wanted to automate that process to cut down on the time I spend on it.
