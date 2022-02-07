@@ -17,6 +17,7 @@ def get_news(search):
         result = gn.search(search, from_=date.strftime('%Y-%m-%d'), to_=(date+delta).strftime('%Y-%m-%d'))
         newsitem = result['entries']
 
+	#This pulls out the attributes I need to grab - title, link, and date published
         for item in newsitem:
             story = {
                 'title':item.title,
@@ -30,6 +31,7 @@ def get_news(search):
 #define a list of search terms (left blank here)
 search_terms = []
 
+#get the results for each search term
 for term in search_terms:
 	results_list = get_news(term)
 	
